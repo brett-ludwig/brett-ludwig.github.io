@@ -1,9 +1,5 @@
 var nukeDropped = false;
 
-function startup() {
-    var bgm = new Audio("./res/war_bgm.mp3");
-    bgm.play()
-}
 
 function softRain() {
   bgm = new Audio('./res/rain.mp3');
@@ -20,8 +16,8 @@ function dropNuke() {
       function () {
       document.getElementById("warzone").src = "https://cdn3.iconfinder.com/data/icons/modern-war/514/war-001-512.png";
     }, 13000);
-
-    setTimeout( softRain(), 3000);
+    setTimeout( function () {snd.pause();}, 3000);
+    softRain();
 
     nukeDropped = true;
   }
